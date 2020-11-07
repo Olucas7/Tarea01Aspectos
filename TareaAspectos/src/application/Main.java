@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 
 
 public class Main extends Application {
@@ -19,11 +20,11 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {	
 		        Button b1 = new Button("Boton 1");
 		        Button b2 = new Button("Boton 2");
-		        Button b3 = new Button(" Boton 3");
+		        Button b3 = new Button("Boton 3");
 		        Button b4 = new Button("Boton 4");
 		        Group root = new Group();
 		        VBox vpanel= new VBox();
-		        HBox contenedor = new HBox();
+		        final HBox contenedor = new HBox();
 		        Label titulo = new Label("CAMBIA COLOR");
 		        final Scene escena = new Scene(root,600,600,Color.BLACK);
 		        titulo.setStyle(" -fx-font: 70px Family;" +"-fx-font-weight: bold;"+
@@ -52,13 +53,15 @@ public class Main extends Application {
 		            }
 		        });
 		        b4.setOnAction(new EventHandler<ActionEvent>(){
-		            @Override
+		            
 		            public void handle(ActionEvent event4){
 		                Circle c1 = new Circle(90,90,30, Color.INDIGO);
 		                VBox v2 = new VBox();
 		                v2.getChildren().add(c1);
 		                v2.setAlignment(Pos.CENTER_RIGHT);
 		                contenedor.getChildren().add(v2);
+		            }
+		        });
 		        
 		        contenedor.getChildren().addAll(b1,b2,b3,b4);
 		        contenedor.setAlignment(Pos.CENTER);
